@@ -87,7 +87,15 @@ if __name__ == "__main__":
         print("保存情報を入力してください")
         user_name = input("user_name: ")
         message = input("message: ")
-        nonce = int(input("nonce: "))
+        try:
+            nonce = int(input("nonce: "))
+        except ValueError:
+            print()
+            print("■■■■■■■■■■■■■■■■ ERROR ■■■■■■■■■■■■■■■■")
+            print("nonce には整数値を入力してください")
+            print("■■■■■■■■■■■■■■■■ ERROR ■■■■■■■■■■■■■■■■")
+            print()
+            continue
         new_bc, new_hash = bc.get_new_block(user_name, message, nonce)
         print("")
         print("生成ハッシュ値:", new_hash)

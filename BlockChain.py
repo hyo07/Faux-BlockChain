@@ -58,7 +58,8 @@ class BC:
     def judge_hash(self, digest, difficulty=DIFFICULTY):
         top = digest[:difficulty]
         # if top == "0" * difficulty:
-        if (top == "0") or (top == "1") or (top == "2") or (top == "3"):
+        diffi_list = ["0", "1", "2", "3"]
+        if top in diffi_list:
             return True
         else:
             return False

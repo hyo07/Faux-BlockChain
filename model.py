@@ -6,22 +6,6 @@ from sqlalchemy import Column, String, DATETIME, BOOLEAN
 import sys
 import os
 
-# username = os.getlogin()
-#
-# if username == "ec2-user":
-#     # mysqlのDBの設定
-#     DATABASE = 'mysql+mysqldb://{user_name}:{password}@{ip}/{db_name}?charset=utf8mb4'.format(
-#         user_name=get_env("MYSQL_USER"),
-#         password=get_env("MYSQL_PASS"),
-#         ip="localhost",
-#         db_name=get_env("DB_NAME"),
-#     )
-#     ENGINE = create_engine(
-#         DATABASE,
-#         encoding="utf-8",
-#         echo=False
-#     )
-# else:
 # sqliteの設定
 dir_name = os.path.dirname(__file__)
 sqlite_path = dir_name + "/test.sqlite3"
